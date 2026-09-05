@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TecnoConciente - Sembrando Valores</title>
+    <style>
+        /* PALETA DE COLORES BASADA EN TU REFERENCIA (Grises y Azul Oscuro) */
+        :root {
+            --bg-dark: #061033;       /* Azul marino muy oscuro (Footer y Header) */
+            --primary-blue: #2C344F;  /* Azul grisáceo principal */
+            --accent-gray: #53586B;   /* Gris intermedio para detalles */
+            --light-bg: #ece8da;      /* Fondo crema/claro de referencia */
+            --card-bg: #ffffff;       /* Blanco para tarjetas */
+            --text-dark: #1e1b4b;
+            --text-light: #f8fafc;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--light-bg);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* 1. HEADER Y NAVEGACIÓN */
+        header {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            padding: 1.2rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        nav a {
+            color: var(--text-light);
+            text-decoration: none;
+            margin-left: 1.5rem;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #9f7aea;
+        }
+
+        /* 2. SECCIÓN PRINCIPAL (HERO) */
+        .hero {
+            background: linear-gradient(rgba(6, 16, 51, 0.9), rgba(44, 52, 79, 0.85)), url('https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 5rem 2rem;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .hero-content {
+            max-width: 500px;
+        }
+
+        .hero-content h1 {
+            font-size: 2.8rem;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+
+        .hero-content p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            color: #cbd5e1;
+        }
+
+        .btn-main {
+            background-color: var(--primary-blue);
+            color: white;
+            padding: 0.7rem 1.5rem;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            transition: background 0.3s;
+        }
+
+        .btn-main:hover {
+            background-color: var(--accent-gray);
+        }
+
+        .hero-img {
+            max-width: 400px;
+            width: 100%;
+            border-radius: 12px;
+        }
+
+        /* TÍTULOS DE SECCIÓN */
+        .section-header {
+            text-align: center;
+            margin: 4rem 1rem 2rem 1rem;
+        }
+
+        .section-header h3 {
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            color: var(--accent-gray);
+            text-transform: uppercase;
+            margin-bottom: 0.3rem;
+        }
+
+        .section-header h2 {
+            font-size: 1.8rem;
+            color: var(--bg-dark);
+        }
+
+        /* CONTENEDOR DE TARJETAS (GRID) */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2rem;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+        }
+
+        .card h3 {
+            font-size: 1.1rem;
+            color: var(--bg-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .card p {
+            font-size: 0.9rem;
+            color: #64748b;
+        }
+
+        /* ETIQUETA INFERIOR EN TARJETAS (Estilo de la imagen de referencia) */
+        .badge-tag {
+            background-color: var(--primary-blue);
+            color: white;
+            font-size: 0.75rem;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            display: inline-block;
+            margin-top: 1rem;
+            font-family: monospace;
+            letter-spacing: 1px;
+        }
+
+        /* 3. FOOTER PROFESIONAL */
+        footer {
+            background-color: var(--bg-dark);
+            color: #94a3b8;
+            padding: 3rem 2rem 1.5rem 2rem;
+            margin-top: 5rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 2rem;
+            max-width: 1100px;
+            margin: 0 auto 2rem auto;
+            font-size: 0.85rem;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-col ul li a {
+            color: #94a3b8;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 1.5rem;
+            font-size: 0.75rem;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+
+        /* CHATBOT FLOTANTE */
+        .chat-widget {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1001;
+        }
+
+        .chat-btn {
+            background-color: var(--primary-blue);
+            color: white;
+            border: none;
+            padding: 0.8rem 1.2rem;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+
+        .chat-box {
+            display: none;
+            position: absolute;
+            bottom: 60px;
+            right: 0;
+            width: 300px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+            overflow: hidden;
+            border: 1px solid #cbd5e1;
+        }
+
+        .chat-header {
+            background: var(--bg-dark);
+            color: white;
+            padding: 0.8rem;
+            font-size: 0.9rem;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .chat-body {
+            height: 200px;
+            padding: 0.8rem;
+            overflow-y: auto;
+            font-size: 0.85rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            background: #f8fafc;
+        }
+
+        .msg {
+            padding: 0.5rem 0.8rem;
+            border-radius: 6px;
+            max-width: 80%;
+        }
+
+        .bot-msg { background: #e2e8f0; align-self: flex-start; color: #1e1b4b; }
+        .user-msg { background: var(--primary-blue); color: white; align-self: flex-end; }
+
+        .chat-input {
+            display: flex;
+            border-top: 1px solid #e2e8f0;
+            padding: 0.4rem;
+        }
+
+        .chat-input input {
+            flex: 1;
+            padding: 0.4rem;
+            border: 1px solid #cbd5e1;
+            border-radius: 4px;
+            outline: none;
+        }
+
+        .chat-input button {
+            background: var(--primary-blue);
+            color: white;
+            border: none;
+            padding: 0.4rem 0.8rem;
+            margin-left: 4px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-area">
+            <span>🛡️ TecnoConciente</span>
+        </div>
+        <nav>
+            <a href="#areas">Áreas</a>
+            <a href="#pilares">Pilares</a>
+            <a href="#normas">Convivencia</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Sembrando Valores con la Tecnología</h1>
+            <p>Promoviendo una convivencia digital sana y el cumplimiento de las normas dentro de nuestra institución educativa.</p>
+            <a href="#normas" class="btn-main">Conoce más</a>
+        </div>
+        <div>
+            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=500&q=80" alt="Tecnología y Valores" class="hero-img">
+        </div>
+    </section>
+
+    <div id="areas" class="section-header">
+        <h3>Top Categories</h3>
+        <h2>Nuestras Áreas de Acción</h2>
+    </div>
+    <div class="grid-container">
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=400&q=80" alt="Integridad">
+            <h3>Integridad Digital</h3>
+            <p>Uso honesto de las plataformas académicas e institucionales.</p>
+            <span class="badge-tag">2C344F</span>
+        </div>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80" alt="Respeto">
+            <h3>Respeto Virtual</h3>
+            <p>Empatía y buen trato en chats, foros y redes escolares.</p>
+            <span class="badge-tag">53586B</span>
+        </div>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=400&q=80" alt="Responsabilidad">
+            <h3>Responsabilidad</h3>
+            <p>Cuidado de los equipos y dispositivos tecnológicos del colegio.</p>
+            <span class="badge-tag">2C344F</span>
+        </div>
+    </div>
+
+    <div id="pilares" class="section-header">
+        <h3>Valores Clave</h3>
+        <h2>4 Pilares Fundamentales</h2>
+    </div>
+    <div class="grid-container">
+        <div class="card">
+            <h3>Empatía</h3>
+            <p>Comprender las emociones y realidades de los demás en el entorno digital.</p>
+            <span class="badge-tag">2C344F</span>
+        </div>
+        <div class="card">
+            <h3>Solidaridad</h3>
+            <p>Apoyar a compañeros que presentan dificultades con las herramientas.</p>
+            <span class="badge-tag">53586B</span>
+        </div>
+        <div class="card">
+            <h3>Honestidad</h3>
+            <p>Actuar con la verdad, evitando el plagio o el uso indebido de datos.</p>
+            <span class="badge-tag">53586B</span>
+        </div>
+        <div class="card">
+            <h3>Justizia</h3>
+            <p>Promover la equidad y las reglas justas dentro de la comunidad.</p>
+            <span class="badge-tag">2C344F</span>
+        </div>
+    </div>
+
+    <div id="normas" class="section-header">
+        <h3>Promoción de Convivencia</h3>
+        <h2>Normas Institucionales</h2>
+    </div>
+    <div class="grid-container">
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=400&q=80" alt="Norma 1">
+            <h3>1. Uso Académico</h3>
+            <p>Emplear los dispositivos institucionales solo para fines educativos.</p>
+            <span class="badge-tag">2C344F</span>
+        </div>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=400&q=80" alt="Norma 2">
+            <h3>2. Ciberacoso Cero</h3>
+            <p>Prohibido el uso de memes o comentarios ofensivos hacia compañeros.</p>
+            <span class="badge-tag">53586B</span>
+        </div>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=400&q=80" alt="Norma 3">
+            <h3>3. Respeto en Foros</h3>
+            <p>Participar de manera constructiva y con lenguaje formal.</p>
+            <span class="badge-tag">2C344F</span>
+        </div>
+    </div>
+
+    <div class="chat-widget">
+        <button class="chat-btn" onclick="toggleChat()">💬 Asistente</button>
+        <div class="chat-box" id="chatBox">
+            <div class="chat-header">
+                <span>TecnoBot</span>
+                <span style="cursor:pointer;" onclick="toggleChat()">✕</span>
+            </div>
+            <div class="chat-body" id="chatBody">
+                <div class="msg bot-msg">¡Hola! Pregúntame sobre los valores o normas.</div>
+            </div>
+            <div class="chat-input">
+                <input type="text" id="userInput" placeholder="Escribe aquí..." onkeypress="handleKey(event)">
+                <button onclick="sendMessage()">Enviar</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>Products</h4>
+                <ul><li><a href="#">Showcase</a></li></ul>
+            </div>
+            <div class="footer-col">
+                <h4>Category</h4>
+                <ul>
+                    <li><a href="#">Recursos Legales</a></li>
+                    <li><a href="#">Políticas de Uso</a></li>
+                    <li><a href="#">Informes Anuales</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Company Info</h4>
+                <ul>
+                    <li><a href="#">About us</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Support</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Follow us</h4>
+                <ul>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">YouTube</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>&copy; 2026 TecnoConciente</span>
+            <span>Data settings</span>
+            <span>Cookie settings</span>
+            <span>Privacy Policy</span>
+        </div>
+    </footer>
+
+    <script>
+        function toggleChat() {
+            const box = document.getElementById('chatBox');
+            box.style.display = box.style.display === 'block' ? 'none' : 'block';
+        }
+        function handleKey(e) { if(e.key === 'Enter') sendMessage(); }
+        function sendMessage() {
+            const input = document.getElementById('userInput');
+            const text = input.value.trim().toLowerCase();
+            if(!text) return;
+            const chatBody = document.getElementById('chatBody');
+            chatBody.innerHTML += `<div class="msg user-msg">${input.value}</div>`;
+            input.value = '';
+            chatBody.scrollTop = chatBody.scrollHeight;
+
+            setTimeout(() => {
+                let reply = "Recuerda que este proyecto busca fomentar una excelente convivencia escolar con ayuda de la tecnología.";
+                if(text.includes('norma')) reply = "Las normas incluyen el uso estrictamente académico y cero tolerancia al ciberacoso.";
+                if(text.includes('valor')) reply = "Los 4 valores principales son: Empatía, Solidaridad, Honestidad y Justicia.";
+                chatBody.innerHTML += `<div class="msg bot-msg">${reply}</div>`;
+                chatBody.scrollTop = chatBody.scrollHeight;
+            }, 500);
+        }
+    </script>
+</body>
+</html>
