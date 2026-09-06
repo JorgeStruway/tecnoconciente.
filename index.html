@@ -69,13 +69,12 @@
 
         nav a:hover { color: #9f7aea; }
 
-        /* HERO CON LA IMAGEN DE FONDO LIMPIA Y NOMBRES SIMPLES */
         .hero {
             background: linear-gradient(rgba(6, 16, 51, 0.75), rgba(44, 52, 79, 0.75)), url('fondo.jpg');
             background-size: cover;
             background-position: center;
             color: white;
-            padding: 7rem 2rem;
+            padding: 9rem 2rem;
             text-align: center;
             display: flex;
             justify-content: center;
@@ -83,8 +82,8 @@
         }
 
         .hero-content { max-width: 800px; }
-        .hero-content h1 { font-size: 3.2rem; line-height: 1.2; margin-bottom: 1rem; text-transform: uppercase; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
-        .hero-content p { font-size: 1.25rem; margin-bottom: 2rem; color: #e2e8f0; text-shadow: 1px 1px 3px rgba(0,0,0,0.5); }
+        .hero-content h1 { font-size: 3.2rem; line-height: 1.2; margin-bottom: 1.5rem; text-transform: uppercase; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
+        .hero-content p { font-size: 1.25rem; margin-bottom: 2.5rem; color: #e2e8f0; text-shadow: 1px 1px 3px rgba(0,0,0,0.5); }
         
         .btn-main {
             background-color: var(--primary-blue);
@@ -100,21 +99,61 @@
 
         .btn-main:hover { background-color: var(--accent-gray); }
 
-        .section-header {
-            text-align: center;
-            margin: 4rem 1rem 2rem 1rem;
+        /* SECCIÓN DE MISIÓN Y VISIÓN */
+        .mission-vision-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
         }
 
-        .section-header h3 { font-size: 0.9rem; letter-spacing: 2px; color: var(--accent-gray); text-transform: uppercase; margin-bottom: 0.3rem; }
-        .section-header h2 { font-size: 1.8rem; color: var(--bg-dark); }
+        .mv-card {
+            background: var(--card-bg);
+            padding: 2.5rem;
+            border-radius: 16px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.05);
+            border-left: 6px solid var(--primary-blue);
+        }
+
+        .mv-card h3 {
+            font-size: 1.4rem;
+            color: var(--bg-dark);
+            margin-bottom: 1rem;
+        }
+
+        .mv-card p {
+            color: #475569;
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+
+        .section-space {
+            padding: 6rem 1.5rem 2rem 1.5rem;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0 1rem;
+        }
+
+        .section-header h3 { font-size: 0.9rem; letter-spacing: 2px; color: var(--accent-gray); text-transform: uppercase; margin-bottom: 0.5rem; }
+        .section-header h2 { font-size: 2rem; color: var(--bg-dark); margin-bottom: 1rem; }
+        .section-header p { color: #64748b; font-size: 1rem; line-height: 1.6; }
 
         .grid-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 2rem;
+            gap: 2.5rem;
             max-width: 1100px;
             margin: 0 auto;
-            padding: 0 1.5rem;
+            justify-content: center;
+            justify-items: center;
         }
 
         .card {
@@ -125,6 +164,8 @@
             box-shadow: 0 6px 15px rgba(0,0,0,0.05);
             transition: transform 0.3s;
             cursor: pointer;
+            width: 100%;
+            max-width: 330px;
         }
 
         .card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
@@ -184,8 +225,8 @@
         footer {
             background-color: var(--bg-dark);
             color: #94a3b8;
-            padding: 3rem 2rem 1.5rem 2rem;
-            margin-top: 5rem;
+            padding: 4rem 2rem 2rem 2rem;
+            margin-top: 8rem;
         }
 
         .footer-grid {
@@ -193,7 +234,7 @@
             grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
             gap: 2rem;
             max-width: 1100px;
-            margin: 0 auto 2rem auto;
+            margin: 0 auto 3rem auto;
             font-size: 0.85rem;
         }
 
@@ -230,13 +271,13 @@
 
     <header>
         <div class="logo-area">
-            <!-- NOMBRES LIMPIOS DE UNA SOLA PALABRA -->
             <img src="logo.png" alt="Logo Colegio" class="school-logo">
             <span>TecnoConciente</span>
         </div>
         <nav>
+            <a href="#mision">Misión</a>
             <a href="#areas">Áreas</a>
-            <a href="#pilares">Valores</a>
+            <a href="#valores">Valores</a>
             <a href="#normas">Normas</a>
         </nav>
     </header>
@@ -249,119 +290,147 @@
         </div>
     </section>
 
+    <!-- SECCIÓN: MISIÓN Y VISIÓN -->
+    <section id="mision" class="section-space reveal">
+        <div class="section-header">
+            <h3>Nuestro Propósito</h3>
+            <h2>Misión y Visión</h2>
+            <p>Conoce los objetivos fundamentales que guían nuestro proyecto institucional en el Colegio Pablo L. Ávila.</p>
+        </div>
+        <div class="mission-vision-container">
+            <div class="mv-card">
+                <h3>Misión</h3>
+                <p>La misión de nuestra página web es promover y fortalecer los valores dentro de la institución Pablo L. Ávila, para fomentar el respeto, la responsabilidad, la solidaridad, la honestidad y una buena convivencia entre todos los miembros de la comunidad educativa. Lo hacemos mediante contenidos educativos, consejos y recursos digitales que motiven a los estudiantes a practicar estos valores en su vida diaria.</p>
+            </div>
+            <div class="mv-card">
+                <h3>Visión</h3>
+                <p>Nuestra visión es que esta plataforma sea un medio que impulse una cultura de valores en la institución, para lograr una comunidad educativa más unida, respetuosa y comprometida. Esto se logrará utilizando la tecnología para informar, enseñar y motivar a los estudiantes a poner en práctica los valores tanto dentro como fuera de la institución.</p>
+            </div>
+        </div>
+    </section>
+
     <!-- ÁREAS DE ACCIÓN -->
-    <div id="areas" class="section-header reveal">
-        <h3>Top Categories</h3>
-        <h2>Nuestras Áreas de Acción</h2>
-    </div>
-    <div class="grid-container reveal">
-        <div class="card" onclick="openModal('https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=800&q=80', 'Integridad Digital')">
-            <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=400&q=80" alt="Integridad">
-            <h3>Integridad Digital</h3>
-            <p>Uso honesto de las plataformas académicas e institucionales.</p>
-            <span class="badge-tag">Ver Flyer</span>
+    <section id="areas" class="section-space reveal">
+        <div class="section-header">
+            <h3>Estrategia</h3>
+            <h2>Nuestras Áreas de Acción</h2>
+            <p>Descubre los campos específicos en los que aplicamos herramientas digitales para mejorar la comunicación, el aprendizaje y la prevención de conflictos.</p>
         </div>
-        <div class="card" onclick="openModal('https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80', 'Respeto Virtual')">
-            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80" alt="Respeto">
-            <h3>Respeto Virtual</h3>
-            <p>Empatía y buen trato en chats, foros y redes escolares.</p>
-            <span class="badge-tag">Ver Flyer</span>
+        <div class="grid-container">
+            <div class="card" onclick="openModal('https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=800&q=80', 'Integridad Digital')">
+                <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=400&q=80" alt="Integridad">
+                <h3>Integridad Digital</h3>
+                <p>Uso honesto de las plataformas académicas e institucionales.</p>
+                <span class="badge-tag">Ver Flyer</span>
+            </div>
+            <div class="card" onclick="openModal('https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80', 'Respeto Virtual')">
+                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80" alt="Respeto">
+                <h3>Respeto Virtual</h3>
+                <p>Empatía y buen trato en chats, foros y redes escolares.</p>
+                <span class="badge-tag">Ver Flyer</span>
+            </div>
+            <div class="card" onclick="openModal('https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=80', 'Responsabilidad')">
+                <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=400&q=80" alt="Responsabilidad">
+                <h3>Responsabilidad</h3>
+                <p>Cuidado de los equipos y dispositivos tecnológicos del colegio.</p>
+                <span class="badge-tag">Ver Flyer</span>
+            </div>
         </div>
-        <div class="card" onclick="openModal('https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=80', 'Responsabilidad')">
-            <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=400&q=80" alt="Responsabilidad">
-            <h3>Responsabilidad</h3>
-            <p>Cuidado de los equipos y dispositivos tecnológicos del colegio.</p>
-            <span class="badge-tag">Ver Flyer</span>
-        </div>
-    </div>
+    </section>
 
-    <!-- 4 VALORES CLAVE -->
-    <div id="pilares" class="section-header reveal">
-        <h3>Valores Clave</h3>
-        <h2>Nuestros 4 Valores Clave</h2>
-    </div>
-    <div class="grid-container reveal">
-        <div class="card" onclick="openModal('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80', 'Empatía')">
-            <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=400&q=80" alt="Empatía">
-            <h3>Empatía</h3>
-            <p>Comprender las emociones y realidades de los demás en el entorno digital.</p>
-            <span class="badge-tag">Ver Flyers</span>
+    <!-- VALORES -->
+    <section id="valores" class="section-space reveal">
+        <div class="section-header">
+            <h3>Principios Institucionales</h3>
+            <h2>Nuestros 4 Valores</h2>
+            <p>Estos son los valores que elegimos representar en nuestra página web. Fueron seleccionados a través de una encuesta realizada a los estudiantes, reflejando aquello que la comunidad considera más importante.</p>
         </div>
-        <div class="card" onclick="openModal('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=800&q=80', 'Solidaridad')">
-            <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=400&q=80" alt="Solidaridad">
-            <h3>Solidaridad</h3>
-            <p>Apoyar a compañeros que presentan dificultades con las herramientas.</p>
-            <span class="badge-tag">Ver Flyers</span>
+        <div class="grid-container">
+            <div class="card" onclick="openModal('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80', 'Empatía')">
+                <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=400&q=80" alt="Empatía">
+                <h3>Empatía</h3>
+                <p>Comprender las emociones y realidades de los demás en el entorno digital.</p>
+                <span class="badge-tag">Ver Flyers</span>
+            </div>
+            <div class="card" onclick="openModal('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=800&q=80', 'Solidaridad')">
+                <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=400&q=80" alt="Solidaridad">
+                <h3>Solidaridad</h3>
+                <p>Apoyar a compañeros que presentan dificultades con las herramientas.</p>
+                <span class="badge-tag">Ver Flyers</span>
+            </div>
+            <div class="card" onclick="openModal('https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=800&q=80', 'Honestidad')">
+                <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=400&q=80" alt="Honestidad">
+                <h3>Honestidad</h3>
+                <p>Actuar con la verdad, evitando el plagio o el uso indebido de datos.</p>
+                <span class="badge-tag">Ver Flyers</span>
+            </div>
+            <div class="card" onclick="openModal('https://images.unsplash.com/photo-1577495508048-b635879837f1?auto=format&fit=crop&w=800&q=80', 'Justicia')">
+                <img src="https://images.unsplash.com/photo-1577495508048-b635879837f1?auto=format&fit=crop&w=400&q=80" alt="Justicia">
+                <h3>Justicia</h3>
+                <p>Promover la equidad y las reglas justas dentro de la comunidad.</p>
+                <span class="badge-tag">Ver Flyers</span>
+            </div>
         </div>
-        <div class="card" onclick="openModal('https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=800&q=80', 'Honestidad')">
-            <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=400&q=80" alt="Honestidad">
-            <h3>Honestidad</h3>
-            <p>Actuar con la verdad, evitando el plagio o el uso indebido de datos.</p>
-            <span class="badge-tag">Ver Flyers</span>
-        </div>
-        <div class="card" onclick="openModal('https://images.unsplash.com/photo-1577495508048-b635879837f1?auto=format&fit=crop&w=800&q=80', 'Justicia')">
-            <img src="https://images.unsplash.com/photo-1577495508048-b635879837f1?auto=format&fit=crop&w=400&q=80" alt="Justicia">
-            <h3>Justicia</h3>
-            <p>Promover la equidad y las reglas justas dentro de la comunidad.</p>
-            <span class="badge-tag">Ver Flyers</span>
-        </div>
-    </div>
+    </section>
 
-    <!-- LAS 8 NORMAS DE CONVIVENCIA -->
-    <div id="normas" class="section-header reveal">
-        <h3>Reglamento</h3>
-        <h2>Normas de Convivencia</h2>
-    </div>
-    <div class="grid-container reveal">
-        <div class="card" onclick="openModal('https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=800&q=80', '1. Llegadas Tardías')">
-            <img src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=400&q=80" alt="Llegadas tardias">
-            <h3>1. Llegadas Tardías</h3>
-            <p>Puntualidad en el ingreso a la institución y clases.</p>
-            <span class="badge-tag">Ver Flyers</span>
+    <!-- NORMAS DE CONVIVENCIA -->
+    <section id="normas" class="section-space reveal">
+        <div class="section-header">
+            <h3>Reglamento</h3>
+            <h2>Normas de Convivencia</h2>
+            <p>Las normas de convivencia son las pautas esenciales que guían nuestro día a día en el colegio. A través de estos flyers informativos, buscamos concientizar sobre el cumplimiento de estas reglas para mantener un ambiente de orden y respeto.</p>
         </div>
-        <div class="card" onclick="openModal('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80', '2. Uniforme')">
-            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=400&q=80" alt="Uniforme">
-            <h3>2. Uniforme</h3>
-            <p>Uso correcto e impecable del uniforme escolar reglamentario.</p>
-            <span class="badge-tag">Ver Flyers</span>
+        <div class="grid-container">
+            <div class="card" onclick="openModal('https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=800&q=80', '1. Llegadas Tardías')">
+                <img src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=400&q=80" alt="Llegadas tardias">
+                <h3>1. Llegadas Tardías</h3>
+                <p>Puntualidad en el ingreso a la institución y clases.</p>
+                <span class="badge-tag">Ver Flyers</span>
+            </div>
+            <div class="card" onclick="openModal('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80', '2. Uniforme')">
+                <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=400&q=80" alt="Uniforme">
+                <h3>2. Uniforme</h3>
+                <p>Uso correcto e impecable del uniforme escolar reglamentario.</p>
+                <span class="badge-tag">Ver Flyers</span>
+            </div>
+            <div class="card" onclick="openModal('https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80', '3. Accesorios Inadecuados')">
+                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80" alt="Accesorios">
+                <h3>3. Accesorios Inadecuados</h3>
+                <p>Restricción de elementos ajenos al ámbito académico.</p>
+                <span class="badge-tag">Ver Flyers</span>
+            </div>
+            <div class="card" onclick="openModal('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80', '4. Justificación de Ausencias')">
+                <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=400&q=80" alt="Ausencias">
+                <h3>4. Justificación de Ausencias</h3>
+                <p>Presentación formal de motivos ante faltas o tardanzas.</p>
+                <span class="badge-tag">Ver Flyers</span>
+            </div>
+            <div class="card" onclick="openModal('https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=800&q=80', '5. Actitudes')">
+                <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=400&q=80" alt="Actitudes">
+                <h3>5. Actitudes</h3>
+                <p>Fomento del buen comportamiento y respeto interpersonal.</p>
+                <span class="badge-tag">Ver Flyers</span>
+            </div>
+            <div class="card" onclick="openModal('https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=80', '6. Uso de la Tecnología')">
+                <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=400&q=80" alt="Tecnología">
+                <h3>6. Uso de la Tecnología</h3>
+                <p>Empleo responsable de dispositivos exclusivamente para estudiar.</p>
+                <span class="badge-tag">Ver Flyers</span>
+            </div>
+            <div class="card" onclick="openModal('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80', '7. Ingreso Prohibido')">
+                <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=400&q=80" alt="Ingreso">
+                <h3>7. Ingreso Prohibido</h3>
+                <p>Regulación de accesos a zonas restringidas de la institución.</p>
+                <span class="badge-tag">Ver Flyers</span>
+            </div>
+            <div class="card" onclick="openModal('https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=800&q=80', '8. Daños a los Bienes Institucionales')">
+                <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=400&q=80" alt="Bienes">
+                <h3>8. Daños a los Bienes Institucionales</h3>
+                <p>Cuidado y preservación del mobiliario y equipos del colegio.</p>
+                <span class="badge-tag">Ver Flyers</span>
+            </div>
         </div>
-        <div class="card" onclick="openModal('https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80', '3. Accesorios Inadecuados')">
-            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80" alt="Accesorios">
-            <h3>3. Accesorios Inadecuados</h3>
-            <p>Restricción de elementos ajenos al ámbito académico.</p>
-            <span class="badge-tag">Ver Flyers</span>
-        </div>
-        <div class="card" onclick="openModal('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80', '4. Justificación de Ausencias')">
-            <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=400&q=80" alt="Ausencias">
-            <h3>4. Justificación de Ausencias</h3>
-            <p>Presentación formal de motivos ante faltas o tardanzas.</p>
-            <span class="badge-tag">Ver Flyers</span>
-        </div>
-        <div class="card" onclick="openModal('https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=800&q=80', '5. Actitudes')">
-            <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=400&q=80" alt="Actitudes">
-            <h3>5. Actitudes</h3>
-            <p>Fomento del buen comportamiento y respeto interpersonal.</p>
-            <span class="badge-tag">Ver Flyers</span>
-        </div>
-        <div class="card" onclick="openModal('https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=80', '6. Uso de la Tecnología')">
-            <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=400&q=80" alt="Tecnología">
-            <h3>6. Uso de la Tecnología</h3>
-            <p>Empleo responsable de dispositivos exclusivamente para estudiar.</p>
-            <span class="badge-tag">Ver Flyers</span>
-        </div>
-        <div class="card" onclick="openModal('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80', '7. Ingreso Prohibido')">
-            <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=400&q=80" alt="Ingreso">
-            <h3>7. Ingreso Prohibido</h3>
-            <p>Regulación de accesos a zonas restringidas de la institución.</p>
-            <span class="badge-tag">Ver Flyers</span>
-        </div>
-        <div class="card" onclick="openModal('https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=800&q=80', '8. Daños a los Bienes Institucionales')">
-            <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=400&q=80" alt="Bienes">
-            <h3>8. Daños a los Bienes Institucionales</h3>
-            <p>Cuidado y preservación del mobiliario y equipos del colegio.</p>
-            <span class="badge-tag">Ver Flyers</span>
-        </div>
-    </div>
+    </section>
 
     <!-- MODAL PARA FLYERS -->
     <div class="modal" id="imageModal" onclick="closeModal()">
@@ -391,33 +460,34 @@
     <footer>
         <div class="footer-grid">
             <div class="footer-col">
-                <h4>Products</h4>
-                <ul><li><a href="#">Showcase</a></li></ul>
+                <h4>Proyecto Escolar</h4>
+                <ul><li><a href="#">Colegio Pablo L. Ávila</a></li></ul>
             </div>
             <div class="footer-col">
-                <h4>Category</h4>
+                <h4>Secciones</h4>
                 <ul>
-                    <li><a href="#">Recursos Legales</a></li>
-                    <li><a href="#">Políticas de Uso</a></li>
+                    <li><a href="#mision">Misión y Visión</a></li>
+                    <li><a href="#areas">Áreas de Acción</a></li>
+                    <li><a href="#valores">Valores</a></li>
+                    <li><a href="#normas">Normas</a></li>
                 </ul>
             </div>
             <div class="footer-col">
-                <h4>Company Info</h4>
+                <h4>Soporte</h4>
                 <ul>
-                    <li><a href="#">About us</a></li>
-                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Asistente Virtual</a></li>
+                    <li><a href="#">Contacto Escolar</a></li>
                 </ul>
             </div>
             <div class="footer-col">
-                <h4>Follow us</h4>
+                <h4>Institución</h4>
                 <ul>
-                    <li><a href="#">Instagram</a></li>
-                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Asunción, Paraguay</a></li>
                 </ul>
             </div>
         </div>
         <div class="footer-bottom">
-            <span>&copy; 2026 TecnoConciente</span>
+            <span>&copy; 2026 TecnoConciente - Colegio Nacional E.M.D. Gral. Pablo L. Ávila</span>
             <span>Privacy Policy</span>
         </div>
     </footer>
@@ -468,7 +538,8 @@
             setTimeout(() => {
                 let reply = "Recuerda hacer clic en cualquier tarjeta para ver su flyer explicativo en grande.";
                 if(text.includes('norma')) reply = "Tenemos 8 normas de convivencia orientadas al respeto y uso tecnológico.";
-                if(text.includes('valor')) reply = "Los 4 valores clave son: Empatía, Solidaridad, Honestidad y Justicia.";
+                if(text.includes('valor')) reply = "Los 4 valores elegidos por encuesta son: Empatía, Solidaridad, Honestidad y Justicia.";
+                if(text.includes('mision') || text.includes('vision')) reply = "Nuestra misión y visión buscan fortalecer la convivencia en el Colegio Pablo L. Ávila.";
                 chatBody.innerHTML += `<div class="msg bot-msg">${reply}</div>`;
                 chatBody.scrollTop = chatBody.scrollHeight;
             }, 500);
