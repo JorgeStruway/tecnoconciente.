@@ -69,35 +69,53 @@
 
         nav a:hover { color: #9f7aea; }
 
+        /* SECCIÓN HERO SIN LA IMAGEN LATERAL Y CON EL FONDO LIMPIO */
         .hero {
-            background: linear-gradient(rgba(6, 16, 51, 0.88), rgba(44, 52, 79, 0.85)), url('fondo%20colegio.jpg');
+            background: linear-gradient(rgba(6, 16, 51, 0.75), rgba(44, 52, 79, 0.75)), url('fondo%20colegio.jpg');
             background-size: cover;
             background-position: center;
             color: white;
-            padding: 5rem 2rem;
+            padding: 7rem 2rem;
+            text-align: center;
             display: flex;
-            justify-content: space-around;
+            justify-content: center;
             align-items: center;
-            flex-wrap: wrap;
-            gap: 2rem;
         }
 
-        .hero-content { max-width: 500px; }
-        .hero-content h1 { font-size: 2.8rem; line-height: 1.2; margin-bottom: 1rem; text-transform: uppercase; }
-        .hero-content p { font-size: 1.1rem; margin-bottom: 1.5rem; color: #cbd5e1; }
+        .hero-content { 
+            max-width: 800px; 
+        }
+
+        .hero-content h1 { 
+            font-size: 3.2rem; 
+            line-height: 1.2; 
+            margin-bottom: 1rem; 
+            text-transform: uppercase; 
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero-content p { 
+            font-size: 1.25rem; 
+            margin-bottom: 2rem; 
+            color: #e2e8f0; 
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+        }
         
         .btn-main {
             background-color: var(--primary-blue);
             color: white;
-            padding: 0.7rem 1.5rem;
-            border-radius: 20px;
+            padding: 0.8rem 2rem;
+            border-radius: 25px;
             text-decoration: none;
             font-weight: 600;
             display: inline-block;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            transition: background 0.3s;
         }
 
-        .hero-img { max-width: 400px; width: 100%; border-radius: 12px; }
+        .btn-main:hover {
+            background-color: var(--accent-gray);
+        }
 
         .section-header {
             text-align: center;
@@ -249,8 +267,8 @@
 
     <header>
         <div class="logo-area">
-            <!-- AQUÍ APUNTA EXACTAMENTE A TU ARCHIVO .PNG -->
-            <img src="INSIGNIA PABLO I AVILA (1).png" alt="Logo Colegio" class="school-logo">
+            <!-- INSIGNIA CORREGIDA CON CODIFICACIÓN DE ESPACIOS -->
+            <img src="INSIGNIA%20PABLO%20I%20AVILA%20(1).png" alt="Logo Colegio" class="school-logo">
             <span>TecnoConciente</span>
         </div>
         <nav>
@@ -265,9 +283,6 @@
             <h1>Sembrando Valores con la Tecnología</h1>
             <p>Promoviendo una convivencia digital sana y el cumplimiento de las normas dentro de nuestra institución educativa.</p>
             <a href="#normas" class="btn-main">Conoce más</a>
-        </div>
-        <div>
-            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=500&q=80" alt="Banner" class="hero-img">
         </div>
     </section>
 
