@@ -69,9 +69,9 @@
 
         nav a:hover { color: #9f7aea; }
 
-        /* SECCIÓN HERO SIN LA IMAGEN LATERAL Y CON EL FONDO LIMPIO */
+        /* HERO CON LA IMAGEN DE FONDO LIMPIA Y NOMBRES SIMPLES */
         .hero {
-            background: linear-gradient(rgba(6, 16, 51, 0.75), rgba(44, 52, 79, 0.75)), url('fondo%20colegio.jpg');
+            background: linear-gradient(rgba(6, 16, 51, 0.75), rgba(44, 52, 79, 0.75)), url('fondo.jpg');
             background-size: cover;
             background-position: center;
             color: white;
@@ -82,24 +82,9 @@
             align-items: center;
         }
 
-        .hero-content { 
-            max-width: 800px; 
-        }
-
-        .hero-content h1 { 
-            font-size: 3.2rem; 
-            line-height: 1.2; 
-            margin-bottom: 1rem; 
-            text-transform: uppercase; 
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-        }
-
-        .hero-content p { 
-            font-size: 1.25rem; 
-            margin-bottom: 2rem; 
-            color: #e2e8f0; 
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
-        }
+        .hero-content { max-width: 800px; }
+        .hero-content h1 { font-size: 3.2rem; line-height: 1.2; margin-bottom: 1rem; text-transform: uppercase; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
+        .hero-content p { font-size: 1.25rem; margin-bottom: 2rem; color: #e2e8f0; text-shadow: 1px 1px 3px rgba(0,0,0,0.5); }
         
         .btn-main {
             background-color: var(--primary-blue);
@@ -113,9 +98,7 @@
             transition: background 0.3s;
         }
 
-        .btn-main:hover {
-            background-color: var(--accent-gray);
-        }
+        .btn-main:hover { background-color: var(--accent-gray); }
 
         .section-header {
             text-align: center;
@@ -194,29 +177,9 @@
             padding: 2rem;
         }
 
-        .modal img {
-            max-width: 90%;
-            max-height: 80vh;
-            border-radius: 10px;
-            box-shadow: 0 5px 30px rgba(0,0,0,0.5);
-        }
-
-        .modal-close {
-            position: absolute;
-            top: 20px;
-            right: 30px;
-            color: white;
-            font-size: 2.5rem;
-            font-weight: bold;
-            cursor: pointer;
-        }
-
-        .modal-caption {
-            color: white;
-            margin-top: 1rem;
-            font-size: 1.2rem;
-            text-align: center;
-        }
+        .modal img { max-width: 90%; max-height: 80vh; border-radius: 10px; box-shadow: 0 5px 30px rgba(0,0,0,0.5); }
+        .modal-close { position: absolute; top: 20px; right: 30px; color: white; font-size: 2.5rem; font-weight: bold; cursor: pointer; }
+        .modal-caption { color: white; margin-top: 1rem; font-size: 1.2rem; text-align: center; }
 
         footer {
             background-color: var(--bg-dark);
@@ -267,8 +230,8 @@
 
     <header>
         <div class="logo-area">
-            <!-- INSIGNIA CORREGIDA CON CODIFICACIÓN DE ESPACIOS -->
-            <img src="INSIGNIA%20PABLO%20I%20AVILA%20(1).png" alt="Logo Colegio" class="school-logo">
+            <!-- NOMBRES LIMPIOS DE UNA SOLA PALABRA -->
+            <img src="logo.png" alt="Logo Colegio" class="school-logo">
             <span>TecnoConciente</span>
         </div>
         <nav>
