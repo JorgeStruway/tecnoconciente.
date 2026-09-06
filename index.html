@@ -11,7 +11,6 @@
             --accent-gray: #53586B;
             --light-bg: #ece8da;
             --card-bg: #ffffff;
-            --card-border: #94a3b8;
             --text-dark: #1e1b4b;
             --text-light: #f8fafc;
         }
@@ -100,7 +99,6 @@
 
         .btn-main:hover { background-color: var(--accent-gray); }
 
-        /* SECCIÓN DE MISIÓN Y VISIÓN CENTRADA Y CON MARCO GEOMÉTRICO */
         .mission-vision-container {
             display: flex;
             flex-wrap: wrap;
@@ -111,52 +109,57 @@
             padding: 0 1.5rem;
         }
 
+        /* ESTILO ORIGINAL Y CÓMODO PARA LAS TARJETAS DE MISIÓN Y VISIÓN */
         .mv-card {
             background: var(--card-bg);
-            padding: 3rem 2.5rem;
-            border-radius: 4px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-            /* ESTILO DE MARCO GEOMÉTRICO DOBLE INSPIRADO EN LA REFERENCIA */
-            border: 2px solid var(--primary-blue);
-            outline: 4px solid var(--card-bg);
-            outline-offset: -8px;
+            padding: 2.5rem;
+            border-radius: 16px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.05);
+            border-left: 6px solid var(--primary-blue);
             flex: 1;
             min-width: 300px;
             max-width: 500px;
-            text-align: center; /* Textos centrados */
+            text-align: center;
         }
 
         .mv-card h3 { 
-            font-size: 1.8rem; /* Título más grande */
+            font-size: 1.6rem; 
             color: var(--bg-dark); 
-            margin-bottom: 1.2rem; 
+            margin-bottom: 1rem; 
             font-weight: 700;
         }
 
         .mv-card p { 
-            color: #1e293b; /* Texto sólido y sin opacidad */
-            font-size: 1.15rem; /* Letra un poco más grande y legible */
-            line-height: 1.8; 
+            color: #1e293b; 
+            font-size: 1.08rem; 
+            line-height: 1.7; 
         }
 
         .section-space {
             padding: 6rem 1.5rem 2rem 1.5rem;
         }
 
+        /* ENCABEZADOS CON EL MARCO Y FONDO PARA LAS DESCRIPCIONES (COMO TU DIBUJO) */
         .section-header {
             text-align: center;
             margin-bottom: 3.5rem;
-            max-width: 800px;
+            max-width: 850px;
             margin-left: auto;
             margin-right: auto;
-            padding: 0 1rem;
+            padding: 2rem 2.5rem;
+            background: #fdfbf7;
+            border: 2px solid var(--primary-blue);
+            outline: 4px solid #fdfbf7;
+            outline-offset: -6px;
+            border-radius: 6px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.06);
         }
 
-        .section-header h3 { font-size: 0.95rem; letter-spacing: 2px; color: var(--accent-gray); text-transform: uppercase; margin-bottom: 0.6rem; font-weight: bold; }
-        .section-header h2 { font-size: 2.4rem; color: var(--bg-dark); margin-bottom: 1.2rem; }
-        .section-header p { color: #1e293b; font-size: 1.15rem; line-height: 1.7; font-weight: 500; }
+        .section-header h3 { font-size: 0.9rem; letter-spacing: 2px; color: var(--accent-gray); text-transform: uppercase; margin-bottom: 0.4rem; font-weight: bold; }
+        .section-header h2 { font-size: 2.2rem; color: var(--bg-dark); margin-bottom: 0.8rem; }
+        .section-header p { color: #1e293b; font-size: 1.12rem; line-height: 1.7; font-weight: 400; }
 
-        /* GRILLA FLEXIBLE Y CENTRADA */
+        /* GRILLA FLEXIBLE Y CENTRADA PARA LAS TARJETAS DE ABAJO */
         .grid-container {
             display: flex;
             flex-wrap: wrap;
@@ -167,17 +170,14 @@
             padding: 0 1.5rem;
         }
 
-        /* TARJETAS CON TEXTOS MÁS CLAROS, GRANDES Y CON MARCO GEOMÉTRICO */
+        /* TARJETAS DE ABAJO CON SU ESTILO LIMPIO ORIGINAL Y CENTRADAS */
         .card {
-            background: #fdfbf7; 
-            border: 2px solid var(--primary-blue);
-            outline: 4px solid #fdfbf7;
-            outline-offset: -6px;
-            border-radius: 4px;
-            padding: 2rem 1.8rem;
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 1.5rem;
             text-align: center;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
             cursor: pointer;
             width: 100%;
             max-width: 320px;
@@ -186,41 +186,24 @@
             justify-content: space-between;
         }
 
-        .card:hover { 
-            transform: translateY(-5px); 
-            box-shadow: 0 12px 25px rgba(0,0,0,0.15); 
-        }
+        .card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
 
         .card img {
             width: 100%;
-            height: 170px;
+            height: 160px;
             object-fit: cover;
-            border-radius: 4px;
-            margin-bottom: 1.2rem;
-            border: 1px solid #cbd5e1;
+            border-radius: 10px;
+            margin-bottom: 1rem;
         }
 
-        .card h3 { 
-            font-size: 1.35rem; /* Letra cercana al título principal */
-            color: var(--bg-dark); 
-            margin-bottom: 0.8rem; 
-            font-weight: 700;
-        }
-
-        /* DESCRIPCIONES MÁS GRANDES Y SIN OPACIDAD */
-        .card p { 
-            font-size: 1.1rem; /* Tamaño optimizado y cercano al título */
-            color: #1e293b; /* Color oscuro y totalmente sólido */
-            line-height: 1.65;
-            margin-bottom: 1.5rem;
-            font-weight: 400;
-        }
+        .card h3 { font-size: 1.1rem; color: var(--bg-dark); margin-bottom: 0.5rem; }
+        .card p { font-size: 0.95rem; color: #475569; margin-bottom: 1rem; }
 
         .badge-tag {
             background-color: var(--primary-blue);
             color: white;
-            font-size: 0.85rem;
-            padding: 0.4rem 1.2rem;
+            font-size: 0.75rem;
+            padding: 0.3rem 0.8rem;
             border-radius: 15px;
             display: inline-block;
             font-family: monospace;
@@ -355,19 +338,19 @@
             <div class="card" onclick="openModal('https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=800&q=80', 'Integridad Digital')">
                 <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=400&q=80" alt="Integridad">
                 <h3>Integridad Digital</h3>
-                <p>Garantizamos el uso honesto, ético y responsable de las plataformas académicas e institucionales en todo momento.</p>
+                <p>Uso honesto de las plataformas académicas e institucionales.</p>
                 <span class="badge-tag">Ver Flyer</span>
             </div>
             <div class="card" onclick="openModal('https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80', 'Respeto Virtual')">
                 <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80" alt="Respeto">
                 <h3>Respeto Virtual</h3>
-                <p>Fomentamos la empatía y el buen trato indispensable en chats, foros y redes sociales escolares.</p>
+                <p>Empatía y buen trato en chats, foros y redes escolares.</p>
                 <span class="badge-tag">Ver Flyer</span>
             </div>
             <div class="card" onclick="openModal('https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=80', 'Responsabilidad')">
                 <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=400&q=80" alt="Responsabilidad">
                 <h3>Responsabilidad</h3>
-                <p>Promovemos el cuidado correcto de los equipos, herramientas y dispositivos tecnológicos de la institución.</p>
+                <p>Cuidado de los equipos y dispositivos tecnológicos del colegio.</p>
                 <span class="badge-tag">Ver Flyer</span>
             </div>
         </div>
@@ -384,25 +367,25 @@
             <div class="card" onclick="openModal('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80', 'Empatía')">
                 <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=400&q=80" alt="Empatía">
                 <h3>Empatía</h3>
-                <p>Capacidad fundamental para comprender profundamente las emociones y realidades de los demás en el entorno digital y escolar.</p>
+                <p>Comprender las emociones y realidades de los demás en el entorno digital.</p>
                 <span class="badge-tag">Ver Flyers</span>
             </div>
             <div class="card" onclick="openModal('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=800&q=80', 'Solidaridad')">
                 <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=400&q=80" alt="Solidaridad">
                 <h3>Solidaridad</h3>
-                <p>Apoyo mutuo constante hacia los compañeros que presentan dificultades con las herramientas de estudio y aprendizaje.</p>
+                <p>Apoyar a compañeros que presentan dificultades con las herramientas.</p>
                 <span class="badge-tag">Ver Flyers</span>
             </div>
             <div class="card" onclick="openModal('https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=800&q=80', 'Honestidad')">
                 <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=400&q=80" alt="Honestidad">
                 <h3>Honestidad</h3>
-                <p>Actuar siempre con la verdad y la transparencia, evitando estrictamente el plagio o el uso indebido de la información.</p>
+                <p>Actuar con la verdad, evitando el plagio o el uso indebido de datos.</p>
                 <span class="badge-tag">Ver Flyers</span>
             </div>
             <div class="card" onclick="openModal('https://images.unsplash.com/photo-1577495508048-b635879837f1?auto=format&fit=crop&w=800&q=80', 'Justicia')">
                 <img src="https://images.unsplash.com/photo-1577495508048-b635879837f1?auto=format&fit=crop&w=400&q=80" alt="Justicia">
                 <h3>Justicia</h3>
-                <p>Valor esencial para promover la equidad, el cumplimiento de los acuerdos y las reglas justas dentro de la comunidad escolar.</p>
+                <p>Promover la equidad y las reglas justas dentro de la comunidad.</p>
                 <span class="badge-tag">Ver Flyers</span>
             </div>
         </div>
@@ -419,49 +402,49 @@
             <div class="card" onclick="openModal('https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=800&q=80', '1. Llegadas Tardías')">
                 <img src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=400&q=80" alt="Llegadas tardias">
                 <h3>1. Llegadas Tardías</h3>
-                <p>Establece la importancia absoluta de la puntualidad en el ingreso a la institución y al inicio de cada clase escolar.</p>
+                <p>Puntualidad en el ingreso a la institución y clases.</p>
                 <span class="badge-tag">Ver Flyers</span>
             </div>
             <div class="card" onclick="openModal('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80', '2. Uniforme')">
                 <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=400&q=80" alt="Uniforme">
                 <h3>2. Uniforme</h3>
-                <p>Regula el uso correcto, completo e impecable del uniforme escolar como símbolo de identidad institucional.</p>
+                <p>Uso correcto e impecable del uniforme escolar reglamentario.</p>
                 <span class="badge-tag">Ver Flyers</span>
             </div>
             <div class="card" onclick="openModal('https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80', '3. Accesorios Inadecuados')">
                 <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80" alt="Accesorios">
                 <h3>3. Accesorios Inadecuados</h3>
-                <p>Define la restricción de elementos o adornos ajenos al ámbito estrictamente académico dentro del colegio.</p>
+                <p>Restricción de elementos ajenos al ámbito académico.</p>
                 <span class="badge-tag">Ver Flyers</span>
             </div>
             <div class="card" onclick="openModal('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80', '4. Justificación de Ausencias')">
                 <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=400&q=80" alt="Ausencias">
                 <h3>4. Justificación de Ausencias</h3>
-                <p>Indica el procedimiento y presentación formal de motivos justificados ante faltas o tardanzas estudiantiles.</p>
+                <p>Presentación formal de motivos ante faltas o tardanzas.</p>
                 <span class="badge-tag">Ver Flyers</span>
             </div>
             <div class="card" onclick="openModal('https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=800&q=80', '5. Actitudes')">
                 <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=400&q=80" alt="Actitudes">
                 <h3>5. Actitudes</h3>
-                <p>Promueve de forma activa el buen comportamiento cívico y el respeto interpersonal entre todos los estudiantes.</p>
+                <p>Fomento del buen comportamiento y respeto interpersonal.</p>
                 <span class="badge-tag">Ver Flyers</span>
             </div>
             <div class="card" onclick="openModal('https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=80', '6. Uso de la Tecnología')">
                 <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=400&q=80" alt="Tecnología">
                 <h3>6. Uso de la Tecnología</h3>
-                <p>Garantiza el empleo responsable de dispositivos electrónicos enfocados exclusivamente al desarrollo de actividades de estudio.</p>
+                <p>Empleo responsable de dispositivos exclusivamente para estudiar.</p>
                 <span class="badge-tag">Ver Flyers</span>
             </div>
             <div class="card" onclick="openModal('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80', '7. Ingreso Prohibido')">
                 <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=400&q=80" alt="Ingreso">
                 <h3>7. Ingreso Prohibido</h3>
-                <p>Regula estrictamente los accesos no autorizados a zonas restringidas de la institución para resguardar la seguridad.</p>
+                <p>Regulación de accesos a zonas restringidas de la institución.</p>
                 <span class="badge-tag">Ver Flyers</span>
             </div>
             <div class="card" onclick="openModal('https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=800&q=80', '8. Daños a los Bienes Institucionales')">
                 <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=400&q=80" alt="Bienes">
                 <h3>8. Daños a los Bienes Institucionales</h3>
-                <p>Enfatiza el compromiso y la obligación de cuidar y preservar el mobiliario, instalaciones y equipos del colegio.</p>
+                <p>Cuidado y preservación del mobiliario y equipos del colegio.</p>
                 <span class="badge-tag">Ver Flyers</span>
             </div>
         </div>
