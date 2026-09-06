@@ -31,7 +31,7 @@
         header {
             background-color: var(--bg-dark);
             color: var(--text-light);
-            padding: 1.2rem 2rem;
+            padding: 1rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -44,10 +44,19 @@
         .logo-area {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
             font-size: 1.2rem;
             font-weight: bold;
             letter-spacing: 1px;
+        }
+
+        /* ESTILO PARA EL LOGO DEL COLEGIO EN LA CABECERA */
+        .school-logo {
+            width: 45px;
+            height: 45px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 2px solid #fff;
         }
 
         nav a {
@@ -60,8 +69,9 @@
 
         nav a:hover { color: #9f7aea; }
 
+        /* SECCIÓN HERO CON LA NUEVA IMAGEN DE FONDO DEL COLEGIO */
         .hero {
-            background: linear-gradient(rgba(6, 16, 51, 0.9), rgba(44, 52, 79, 0.85)), url('https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1200&q=80');
+            background: linear-gradient(rgba(6, 16, 51, 0.88), rgba(44, 52, 79, 0.85)), url('fondo colegio.jpg');
             background-size: cover;
             background-position: center;
             color: white;
@@ -141,7 +151,19 @@
             font-family: monospace;
         }
 
-        /* VISOR DE IMAGEN AMPLIADA (MODAL) */
+        /* EFECTO SCROLL REVEAL (Animación de aparición al deslizar) */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* VISOR MODAL PARA FLYERS */
         .modal {
             display: none;
             position: fixed;
@@ -231,7 +253,11 @@
 <body>
 
     <header>
-        <div class="logo-area"><span>🛡️ TecnoConciente</span></div>
+        <div class="logo-area">
+            <!-- AQUÍ SE AÑADE EL LOGO DEL COLEGIO -->
+            <img src="INSIGNIA PABLO l AVILA (1).jpg" alt="Logo Colegio" class="school-logo">
+            <span>TecnoConciente</span>
+        </div>
         <nav>
             <a href="#areas">Áreas</a>
             <a href="#pilares">Valores</a>
@@ -239,7 +265,7 @@
         </nav>
     </header>
 
-    <section class="hero">
+    <section class="hero reveal">
         <div class="hero-content">
             <h1>Sembrando Valores con la Tecnología</h1>
             <p>Promoviendo una convivencia digital sana y el cumplimiento de las normas dentro de nuestra institución educativa.</p>
@@ -251,11 +277,11 @@
     </section>
 
     <!-- ÁREAS DE ACCIÓN -->
-    <div id="areas" class="section-header">
+    <div id="areas" class="section-header reveal">
         <h3>Top Categories</h3>
         <h2>Nuestras Áreas de Acción</h2>
     </div>
-    <div class="grid-container">
+    <div class="grid-container reveal">
         <div class="card" onclick="openModal('https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=800&q=80', 'Integridad Digital')">
             <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=400&q=80" alt="Integridad">
             <h3>Integridad Digital</h3>
@@ -276,44 +302,44 @@
         </div>
     </div>
 
-    <!-- 4 VALORES CLAVE (Centrados y ordenados) -->
-    <div id="pilares" class="section-header">
-        <h3>Nuestros Pilares</h3>
+    <!-- 4 VALORES CLAVE (Corregido 'Justicia' y centrados) -->
+    <div id="pilares" class="section-header reveal">
+        <h3>Valores Clave</h3>
         <h2>Nuestros 4 Valores Clave</h2>
     </div>
-    <div class="grid-container">
+    <div class="grid-container reveal">
         <div class="card" onclick="openModal('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80', 'Empatía')">
             <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=400&q=80" alt="Empatía">
             <h3>Empatía</h3>
             <p>Comprender las emociones y realidades de los demás en el entorno digital.</p>
-            <span class="badge-tag">Ver 3 Flyers</span>
+            <span class="badge-tag">Ver Flyers</span>
         </div>
         <div class="card" onclick="openModal('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=800&q=80', 'Solidaridad')">
             <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=400&q=80" alt="Solidaridad">
             <h3>Solidaridad</h3>
             <p>Apoyar a compañeros que presentan dificultades con las herramientas.</p>
-            <span class="badge-tag">Ver 3 Flyers</span>
+            <span class="badge-tag">Ver Flyers</span>
         </div>
         <div class="card" onclick="openModal('https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=800&q=80', 'Honestidad')">
             <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=400&q=80" alt="Honestidad">
             <h3>Honestidad</h3>
             <p>Actuar con la verdad, evitando el plagio o el uso indebido de datos.</p>
-            <span class="badge-tag">Ver 3 Flyers</span>
+            <span class="badge-tag">Ver Flyers</span>
         </div>
         <div class="card" onclick="openModal('https://images.unsplash.com/photo-1577495508048-b635879837f1?auto=format&fit=crop&w=800&q=80', 'Justicia')">
             <img src="https://images.unsplash.com/photo-1577495508048-b635879837f1?auto=format&fit=crop&w=400&q=80" alt="Justicia">
             <h3>Justicia</h3>
             <p>Promover la equidad y las reglas justas dentro de la comunidad.</p>
-            <span class="badge-tag">Ver 3 Flyers</span>
+            <span class="badge-tag">Ver Flyers</span>
         </div>
     </div>
 
     <!-- LAS 8 NORMAS DE CONVIVENCIA -->
-    <div id="normas" class="section-header">
+    <div id="normas" class="section-header reveal">
         <h3>Reglamento</h3>
         <h2>Normas de Convivencia</h2>
     </div>
-    <div class="grid-container">
+    <div class="grid-container reveal">
         <div class="card" onclick="openModal('https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=800&q=80', '1. Llegadas Tardías')">
             <img src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=400&q=80" alt="Llegadas tardias">
             <h3>1. Llegadas Tardías</h3>
@@ -364,7 +390,7 @@
         </div>
     </div>
 
-    <!-- VENTANA MODAL PARA AGRANDAR FLYERS -->
+    <!-- MODAL PARA FLYERS -->
     <div class="modal" id="imageModal" onclick="closeModal()">
         <span class="modal-close">&times;</span>
         <img id="modalImg" src="" alt="Flyer Ampliado">
@@ -425,12 +451,11 @@
 
     <!-- SCRIPTS -->
     <script>
-        // Funciones para el Visor / Zoom de Flyers
+        // Visor de Flyers (Zoom)
         function openModal(imgSrc, titleText) {
             const modal = document.getElementById('imageModal');
             const modalImg = document.getElementById('modalImg');
             const modalCaption = document.getElementById('modalCaption');
-            
             modal.style.display = 'flex';
             modalImg.src = imgSrc;
             modalCaption.innerText = titleText;
@@ -439,6 +464,21 @@
         function closeModal() {
             document.getElementById('imageModal').style.display = 'none';
         }
+
+        // Efecto Scroll Reveal automático al bajar la página
+        window.addEventListener('scroll', revealElements);
+        function revealElements() {
+            const reveals = document.querySelectorAll('.reveal');
+            for(let i = 0; i < reveals.length; i++) {
+                let windowHeight = window.innerHeight;
+                let elementTop = reveals[i].getBoundingClientRect().top;
+                let elementVisible = 100;
+                if(elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add('active');
+                }
+            }
+        }
+        revealElements(); // Activar al cargar por si acaso
 
         // Chatbot
         function toggleChat() {
