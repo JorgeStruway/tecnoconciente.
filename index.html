@@ -28,12 +28,13 @@
             line-height: 1.6;
         }
 
+        /* CABECERA REDISEÑADA */
         header {
             background-color: var(--bg-dark);
             color: var(--text-light);
-            padding: 1rem 2rem;
-            display: flex;
-            justify-content: space-between;
+            padding: 1.2rem 2.5rem;
+            display: grid;
+            grid-template-columns: auto 1fr auto;
             align-items: center;
             position: sticky;
             top: 0;
@@ -41,29 +42,44 @@
             box-shadow: 0 4px 10px rgba(0,0,0,0.2);
         }
 
+        /* LOGO MÁS GRANDE EN LA ESQUINA (Zona roja) */
         .logo-area {
             display: flex;
             align-items: center;
-            gap: 12px;
-            font-size: 1.2rem;
-            font-weight: bold;
-            letter-spacing: 1px;
         }
 
         .school-logo {
-            width: 45px;
-            height: 45px;
-            object-fit: cover;
+            width: 65px;
+            height: 65px;
+            object-fit: contain;
             border-radius: 50%;
             border: 2px solid #fff;
             background: white;
+            padding: 2px;
+        }
+
+        /* NOMBRE DE LA PÁGINA GRANDE Y EN EL MEDIO */
+        .site-title {
+            text-align: center;
+            font-size: 1.8rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+            color: var(--text-light);
+            text-transform: uppercase;
+        }
+
+        /* BOTONES DE NAVEGACIÓN A LA DERECHA (Zona verde) */
+        nav {
+            display: flex;
+            justify-content: flex-end;
+            gap: 1.5rem;
         }
 
         nav a {
             color: var(--text-light);
             text-decoration: none;
-            margin-left: 1.5rem;
-            font-size: 0.95rem;
+            font-size: 1rem;
+            font-weight: 600;
             transition: color 0.3s;
         }
 
@@ -109,7 +125,6 @@
             padding: 0 1.5rem;
         }
 
-        /* ESTILO ORIGINAL Y CÓMODO PARA LAS TARJETAS DE MISIÓN Y VISIÓN */
         .mv-card {
             background: var(--card-bg);
             padding: 2.5rem;
@@ -122,24 +137,13 @@
             text-align: center;
         }
 
-        .mv-card h3 { 
-            font-size: 1.6rem; 
-            color: var(--bg-dark); 
-            margin-bottom: 1rem; 
-            font-weight: 700;
-        }
-
-        .mv-card p { 
-            color: #1e293b; 
-            font-size: 1.08rem; 
-            line-height: 1.7; 
-        }
+        .mv-card h3 { font-size: 1.6rem; color: var(--bg-dark); margin-bottom: 1rem; font-weight: 700; }
+        .mv-card p { color: #1e293b; font-size: 1.08rem; line-height: 1.7; }
 
         .section-space {
             padding: 6rem 1.5rem 2rem 1.5rem;
         }
 
-        /* ENCABEZADOS CON EL MARCO Y FONDO PARA LAS DESCRIPCIONES (COMO TU DIBUJO) */
         .section-header {
             text-align: center;
             margin-bottom: 3.5rem;
@@ -159,7 +163,6 @@
         .section-header h2 { font-size: 2.2rem; color: var(--bg-dark); margin-bottom: 0.8rem; }
         .section-header p { color: #1e293b; font-size: 1.12rem; line-height: 1.7; font-weight: 400; }
 
-        /* GRILLA FLEXIBLE Y CENTRADA PARA LAS TARJETAS DE ABAJO */
         .grid-container {
             display: flex;
             flex-wrap: wrap;
@@ -170,7 +173,6 @@
             padding: 0 1.5rem;
         }
 
-        /* TARJETAS DE ABAJO CON SU ESTILO LIMPIO ORIGINAL Y CENTRADAS */
         .card {
             background: var(--card-bg);
             border-radius: 16px;
@@ -288,10 +290,13 @@
 <body>
 
     <header>
+        <!-- LOGO EN LA ESQUINA IZQUIERDA -->
         <div class="logo-area">
             <img src="logo.png" alt="Logo Colegio" class="school-logo">
-            <span>TecnoConciente</span>
         </div>
+        <!-- NOMBRE DE LA PÁGINA EN EL MEDIO -->
+        <div class="site-title">TecnoConciente</div>
+        <!-- BOTONES DE NAVEGACIÓN A LA DERECHA -->
         <nav>
             <a href="#mision">Misión</a>
             <a href="#areas">Áreas</a>
