@@ -28,50 +28,54 @@
             line-height: 1.6;
         }
 
-        /* CABECERA REDISEÑADA */
+        /* CABECERA */
         header {
             background-color: var(--bg-dark);
             color: var(--text-light);
-            padding: 1.2rem 2.5rem;
-            display: grid;
-            grid-template-columns: auto 1fr auto;
+            padding: 1.2rem 2rem;
+            display: flex;
+            justify-content: center;
             align-items: center;
             position: sticky;
             top: 0;
             z-index: 1000;
             box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            position: relative;
         }
 
-        /* LOGO MÁS GRANDE EN LA ESQUINA (Zona roja) */
+        /* LOGO FUERA DE LA LÍNEA (Posición flotante en la esquina izquierda) */
         .logo-area {
-            display: flex;
-            align-items: center;
+            position: absolute;
+            left: 25px;
+            top: 15px;
+            z-index: 1010;
         }
 
         .school-logo {
-            width: 65px;
-            height: 65px;
+            width: 75px;
+            height: 75px;
             object-fit: contain;
             border-radius: 50%;
-            border: 2px solid #fff;
+            border: 3px solid #fff;
             background: white;
             padding: 2px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
         }
 
-        /* NOMBRE DE LA PÁGINA GRANDE Y EN EL MEDIO */
+        /* NOMBRE DE LA PÁGINA 100% CENTRADO EN LA PANTALLA */
         .site-title {
-            text-align: center;
-            font-size: 1.8rem;
+            font-size: 2rem;
             font-weight: bold;
             letter-spacing: 2px;
             color: var(--text-light);
             text-transform: uppercase;
         }
 
-        /* BOTONES DE NAVEGACIÓN A LA DERECHA (Zona verde) */
+        /* BOTONES DE NAVEGACIÓN UBICADOS A LA DERECHA */
         nav {
+            position: absolute;
+            right: 25px;
             display: flex;
-            justify-content: flex-end;
             gap: 1.5rem;
         }
 
@@ -290,11 +294,11 @@
 <body>
 
     <header>
-        <!-- LOGO EN LA ESQUINA IZQUIERDA -->
+        <!-- LOGO FUERA DE LA LÍNEA EN LA ESQUINA IZQUIERDA -->
         <div class="logo-area">
             <img src="logo.png" alt="Logo Colegio" class="school-logo">
         </div>
-        <!-- NOMBRE DE LA PÁGINA EN EL MEDIO -->
+        <!-- NOMBRE DE LA PÁGINA PERFECTAMENTE CENTRADO -->
         <div class="site-title">TecnoConciente</div>
         <!-- BOTONES DE NAVEGACIÓN A LA DERECHA -->
         <nav>
